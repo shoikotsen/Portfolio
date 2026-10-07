@@ -1,185 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shoikot Sen | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shoikot Sen | Computer Science Student</title>
+<meta name="description" content="Computer science student building embedded software, automation tools and web apps in Python and C/C++.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#F4F5EF;--ink:#22352B;--mute:#5E6B55;--card:#FBFBF7;--line:#D5D9C9;--acc:#4F6B3F;--accink:#fff;--sage:#6F8A5A;--hey:#365E3F;--term:#0F1823;--termink:#C9D6E6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151D18;--ink:#E3EBDD;--mute:#A3B298;--card:#1D2822;--line:#2E3C33;--acc:#9DBB82;--accink:#151D18;--sage:#8FAE76;--hey:#A9C98A;--term:#0A1119}}
+:root[data-theme="dark"]{--bg:#151D18;--ink:#E3EBDD;--mute:#A3B298;--card:#1D2822;--line:#2E3C33;--acc:#9DBB82;--accink:#151D18;--sage:#8FAE76;--hey:#A9C98A;--term:#0A1119}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg) radial-gradient(color-mix(in srgb,var(--line) 80%,transparent) 1px,transparent 1.5px) 0 0/24px 24px;color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"IBM Plex Sans Condensed","IBM Plex Sans",sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:2px solid var(--line)}
+nav{display:flex;align-items:center;gap:20px;height:64px}
+nav .logo{display:flex;align-items:center;gap:14px;text-decoration:none;margin-right:auto;font:400 20px "IBM Plex Mono",monospace;color:var(--mute)}
+nav .logo b{font-weight:600;color:var(--ink)}
+.mark{--mk:#E4E9D8;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--mk);color:#233229;font:600 26px "IBM Plex Mono",monospace;letter-spacing:-.04em}
+.mark i{font-style:normal;color:#6B8A55}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mark{--mk:#26332B;color:#DDE8D0}}
+:root[data-theme="dark"] .mark{--mk:#26332B;color:#DDE8D0}
+.eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 24px;font:400 14px "IBM Plex Mono",monospace;letter-spacing:.09em;text-transform:uppercase;color:var(--mute)}
+.eyebrow i{flex:none;width:10px;height:10px;border-radius:50%;background:#6B8A55;box-shadow:0 0 0 5px color-mix(in srgb,#6B8A55 20%,transparent)}
+nav a.l{text-decoration:none;color:var(--mute);font-size:15px}
+nav a.l:hover{color:var(--ink)}
+button,.btn{font:500 15px "IBM Plex Sans",sans-serif;border-radius:8px;padding:10px 18px;border:1px solid var(--ink);background:none;color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.p{background:var(--acc);border-color:var(--acc);color:var(--accink)}
+.dm{display:flex;align-items:center;gap:8px;padding:3px 4px 3px 9px;border-radius:8px;border:1px solid var(--line);background:none;font:400 11px "IBM Plex Mono",monospace;color:var(--mute);opacity:.85}
+.dm:hover{opacity:1}
+.dm .kw{color:var(--ink)}.dm b{font-weight:600}
+.dm[aria-checked="true"] b{color:var(--acc)}
+.trk{position:relative;flex:none;width:28px;height:16px;border-radius:999px;background:var(--line);transition:background .2s}
+.trk i{position:absolute;top:2px;left:2px;width:12px;height:12px;border-radius:50%;background:var(--card);box-shadow:0 0 0 1px color-mix(in srgb,var(--ink) 25%,transparent);transition:transform .2s}
+.dm[aria-checked="true"] .trk{background:var(--acc)}
+.dm[aria-checked="true"] .trk i{transform:translateX(12px)}
+@media (max-width:520px){.dm .pre{display:none}}
+@media (prefers-reduced-motion:reduce){.trk,.trk i{transition:none}}
+section{padding:88px 0 0}
+.hero{padding-top:64px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+h1{font-size:clamp(46px,7.4vw,86px);font-weight:500;letter-spacing:-.035em;line-height:1.02;color:var(--ink)}
+h1 .g{color:var(--sage)}
+.hey{margin:0 0 20px;font:400 20px "IBM Plex Mono",monospace;color:var(--hey)}
+.lede{color:var(--mute);max-width:54ch;margin:32px 0 32px;font-size:19px;line-height:1.85}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.ws{--c-bg:#EDF0E6;--c-line:#C5CCB8;--c-ink:#5E6B55;--c-dark:#2C3B32;--c-pill:#DCE5CB;background:var(--c-bg);border:1.5px solid var(--c-line);border-radius:22px;overflow:hidden;font:400 14px "IBM Plex Mono",monospace;color:var(--c-ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ws{--c-bg:#1A2420;--c-line:#34443A;--c-ink:#A9B79C;--c-dark:#0E1612;--c-pill:#2A3A2D}}
+:root[data-theme="dark"] .ws{--c-bg:#1A2420;--c-line:#34443A;--c-ink:#A9B79C;--c-dark:#0E1612;--c-pill:#2A3A2D}
+.ws .top,.ws .foot{display:flex;justify-content:space-between;align-items:center;padding:16px 22px}
+.ws .top{border-bottom:1.5px solid var(--c-line)}
+.ws .dots{display:flex;gap:14px}.ws .dots i{width:9px;height:9px;border-radius:50%;background:var(--c-line)}
+.scene{position:relative;background-image:linear-gradient(color-mix(in srgb,var(--c-line) 35%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--c-line) 35%,transparent) 1px,transparent 1px);background-size:28px 28px}
+.scene svg{display:block;width:100%;height:auto;shape-rendering:crispEdges}
+.tag{position:absolute;border:1.5px solid var(--c-line);background:var(--c-bg);padding:7px 13px;border-radius:6px;font-size:13px}
+.t1{top:8%;left:5%;transform:rotate(-6deg);animation:fl 5s ease-in-out infinite}
+.t2{top:15%;right:4%;animation:bob 4s ease-in-out infinite}
+.hello{position:absolute;right:5%;bottom:6%;background:var(--c-pill);border:1.5px solid var(--c-line);border-radius:999px;padding:11px 20px;text-decoration:none;color:var(--c-ink)}
+.say{background:var(--c-dark);color:#DDE8D0;padding:24px;font-size:15px;min-height:72px}
+.say b{color:#A9C98A;margin-right:10px;font-weight:400}
+.say .caret{display:inline-block;width:8px;height:15px;background:#DDE8D0;vertical-align:-2px;margin-left:2px;animation:b 1.1s steps(2) infinite}
+.ws .foot{font-size:13px}
+.ws .live{display:flex;align-items:center;gap:10px}.ws .live i{width:9px;height:9px;border-radius:50%;background:#6B8A55;box-shadow:0 0 0 4px color-mix(in srgb,#6B8A55 22%,transparent)}
+.ws .foot button{border:0;padding:4px;font:inherit;color:inherit;border-radius:4px}
+.blink{animation:b 1.2s steps(2) infinite}.plus{animation:b 2.4s steps(2) infinite}
+@keyframes b{to{opacity:.25}}
+@keyframes fl{50%{transform:translateY(-5px) rotate(-6deg)}}
+@keyframes bob{50%{transform:translateY(-4px)}}
+.ws.paused *{animation-play-state:paused!important}
+h2{font-size:clamp(32px,4.4vw,46px);font-weight:500;letter-spacing:-.03em}
+.sub{color:var(--mute);margin:10px 0 36px;max-width:56ch}
+.tl{border-left:2px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 36px 28px}
+.job::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px var(--bg)}
+.when{color:var(--mute);font-size:14px}
+.job h3{font-size:22px;margin:4px 0}
+.org{font-weight:500}
+.job ul{margin:12px 0 10px;padding-left:20px;max-width:70ch}
+.job li{margin-bottom:6px}
+.stack{font:400 13px "IBM Plex Mono",monospace;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.chip{border-radius:999px;padding:7px 16px;border-color:var(--line);color:var(--mute)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.card[hidden]{display:none}
+.card h3{font-size:21px}
+.card p{margin:0;color:var(--mute);font-size:16px}
+.card .lk{margin-top:auto;display:flex;gap:16px}.card .lk a{font-weight:500;color:var(--acc)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.box h3{font-size:19px;margin-bottom:8px}
+.box p{margin:0;color:var(--mute)}
+.rows{margin:36px 0 0;border-bottom:1px solid var(--line)}
+.rows .r{display:grid;grid-template-columns:minmax(120px,300px) 1fr;gap:16px 40px;padding:28px 0;border-top:1px solid var(--line)}
+.rows dt{font:600 13px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);padding-top:6px}
+.sh{margin:36px 0 0;font:600 14px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.big{font-size:30px;margin:8px 0 0}
+.edu{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;margin-top:16px}
+.edu h3{font-size:26px;margin-bottom:6px}
+.edu .org{margin:12px 0 16px;font-weight:500;color:var(--ink)}
+.edu p{margin:0;color:var(--mute)}
+.sh+.rows{margin-top:16px}
+.rows dd b{display:block;color:var(--ink);font-weight:600;font-size:19px}
+.rows dd{margin:0;color:var(--mute);font-size:18px;line-height:1.8}
+@media (max-width:760px){.rows .r{grid-template-columns:1fr;gap:6px;padding:22px 0}}
+.contact{--cb:#E5ECDD;background:var(--cb);color:var(--ink);border-radius:20px;padding:64px 40px;margin-top:88px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .contact{--cb:#26332B}}
+:root[data-theme="dark"] .contact{--cb:#26332B}
+.contact h2{font-size:clamp(40px,6vw,64px);letter-spacing:-.035em;line-height:1.02}
+.contact p{max-width:46ch;margin:28px 0 32px;font-size:20px;line-height:1.85;color:var(--mute)}
+.contact .btn{border-color:var(--ink);color:var(--ink)}
+.contact .btn.p{background:var(--ink);color:var(--bg)}
+footer{margin-top:88px;border-top:1px solid var(--line);color:var(--mute)}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding:72px 0 56px}
+.fname{margin:24px 0 20px;font:400 15px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+.fq{margin:0 0 12px;font-size:19px}
+.fa{font:400 15px "IBM Plex Mono",monospace}
+.ft h4{margin:8px 0 20px;font:600 14px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+.ft ul{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.ft li a{font-size:20px;text-decoration:none;overflow-wrap:anywhere}
+.ft li a:hover{color:var(--ink)}
+.fb{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding:28px 0;font:400 14px "IBM Plex Mono",monospace}
+@media (max-width:760px){.ft{grid-template-columns:1fr;gap:36px;padding:48px 0 40px}}
+@media (max-width:760px){.hero{grid-template-columns:1fr}nav a.l{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cur{animation:none}}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Shoikot Sen</h1>
-    <p>Computer Science Student | Python, C/C++ | Automation & Embedded Systems</p>
-  </header>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top" aria-label="Shoikot portfolio, home"><span class="mark">ss<i>.</i></span><span class="nm"><b>shoikot</b> / portfolio</span></a>
+<a class="l" href="#experience">Experience</a><a class="l" href="#projects">Projects</a><a class="l" href="#about">About</a><a class="l" href="#certificates">Certificates</a><a class="l" href="#skills">Skills</a>
+<a class="btn p" href="#contact">Contact</a>
+<button id="dm" class="dm" type="button" role="switch" aria-checked="false" aria-label="Dark mode"><span class="code"><span class="pre"><span class="kw">dark_mode</span> = </span><b id="dmv">false</b>;</span><span class="trk"><i></i></span></button>
+</nav></div></header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I’m a senior at the University of South Florida majoring in Computer Science. I have a strong foundation in software development, embedded systems, and automation. I enjoy solving problems with code and collaborating on innovative tech projects. Fluent in English, Bangla, and Hindi.
-    </p>
-  </section>
+<main class="wrap" id="top">
+<div class="hero">
+ <div>
+  <p class="eyebrow"><i></i>Embedded systems, automation &amp; the web</p>
+  <p class="hey">Hey, I'm Shoikot Sen.</p>
+  <h1>Serious about systems. <span class="g">Curious about everything.</span></h1>
+  <p class="lede">Computer science student. Software engineer. Researcher.<br>I build the systems behind the experience, from fintech tools and genomic data pipelines to software that studies how people interact.</p>
+  <div class="row"><a class="btn p" href="#projects">See my work</a><a class="btn" href="Resume%20Shoikot.pdf">Download resume</a></div>
+ </div>
+ <div class="ws" id="ws">
+  <div class="top"><span>~/shoikot/workspace</span><span class="dots"><i></i><i></i><i></i></span></div>
+  <div class="scene">
+   <span class="tag t1">{ curiosity: true }</span><span class="tag t2">build. test. learn.</span>
+   <svg viewBox="0 0 160 100" role="img" aria-label="Pixel illustration of a developer at a desk with a plant and a coffee mug"><ellipse cx="80" cy="90" rx="62" ry="5" fill="var(--c-line)" opacity=".55"/><rect x="34" y="48" width="4" height="24" fill="#A3AC95"/><rect x="39" y="68" width="2" height="18" fill="#A3AC95"/><rect x="34" y="86" width="12" height="1.5" fill="#A3AC95"/><rect x="44" y="66" width="8" height="18" fill="#38433B"/><rect x="40" y="84" width="14" height="3" fill="#E6E8DC"/><rect x="42" y="63" width="18" height="4" fill="#38433B"/><rect x="38" y="47" width="22" height="17" fill="#5F7A5A"/><rect x="45" y="44" width="6" height="4" fill="#B0856A"/><rect x="42" y="30" width="14" height="14" fill="#B0856A"/><rect x="40" y="25" width="18" height="6" fill="#2F332D"/><rect x="40" y="29" width="3" height="5" fill="#2F332D"/><rect x="55" y="29" width="3" height="5" fill="#2F332D"/><rect x="46" y="35" width="2" height="2" fill="#2F332D"/><rect x="52" y="35" width="2" height="2" fill="#2F332D"/><rect x="47" y="40" width="5" height="1" fill="#7A5340"/><rect x="58" y="52" width="14" height="4" fill="#B0856A"/><rect x="70" y="56" width="4" height="4" fill="#B0856A"/><rect x="40" y="62" width="100" height="5" fill="#66735B"/><rect x="44" y="67" width="92" height="2" fill="#4F5B47"/><rect x="44" y="69" width="3" height="21" fill="#66735B"/><rect x="133" y="69" width="3" height="21" fill="#66735B"/><rect x="66" y="60" width="22" height="2" fill="#27382F"/><rect x="82" y="28" width="40" height="30" fill="#27382F"/><rect x="85" y="31" width="34" height="24" fill="#DCE6CD"/><rect x="98" y="58" width="8" height="4" fill="#27382F"/><rect x="89" y="35" width="10" height="1.5" fill="#6B8A55"/><rect x="89" y="39" width="4" height="1.5" fill="#6B8A55"/><rect x="95" y="39" width="16" height="1.5" fill="#6B8A55"/><rect x="93" y="43" width="12" height="1.5" fill="#6B8A55"/><rect x="107" y="43" width="6" height="1.5" fill="#6B8A55"/><rect class="blink" x="89" y="47" width="2" height="4" fill="#6B8A55"/><rect x="126" y="56" width="7" height="6" fill="#B0856A"/><rect x="133" y="57" width="3" height="3" fill="#B0856A"/><rect x="27" y="56" width="2" height="18" fill="#6B8A55"/><rect x="21" y="60" width="6" height="3" fill="#6B8A55"/><rect x="29" y="54" width="6" height="3" fill="#6B8A55"/><rect x="29" y="64" width="6" height="3" fill="#6B8A55"/><rect x="22" y="68" width="5" height="3" fill="#6B8A55"/><polygon points="22,74 34,74 33,88 23,88" fill="#A68A6A"/><g class="plus" fill="#9AAE84"><rect x="34" y="40" width="6" height="2"/><rect x="36" y="38" width="2" height="6"/></g><g class="plus" fill="#9AAE84" style="animation-delay:-1.2s"><rect x="142" y="38" width="8" height="3"/><rect x="144.5" y="35.5" width="3" height="8"/></g></svg>
+   <a class="hello" href="#contact">Say hello &#10035;</a>
+  </div>
+  <div class="say" aria-live="off"><b>&#10095;</b><span id="say"></span><span class="caret"></span></div>
+  <div class="foot"><span class="live"><i></i>always learning</span><button id="pause" type="button">Pause motion &#8545;</button></div>
+ </div>
+</div>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <strong>PDF Manager Tool (Python)</strong> – A command-line tool to merge multiple PDF files efficiently.
-        <a href="https://github.com/shoikotsen/pdf_manager" target="_blank">View on GitHub</a>
-      </li>
-
-      <li>
-        <strong>Snake Game (C++)</strong> – A terminal-based Snake game featuring dynamic tail logic and score tracking.
-        <a href="https://github.com/shoikotsen/snake_game" target="_blank">View on GitHub</a>
-      </li>
-
-      <li>
-        <strong>Weather App (HTML/CSS/JS)</strong> – A web app that displays real-time weather for any city. It shows temperature, condition, and icon.
-        <a href="https://shoikotsen.github.io/weather-app/" target="_blank">Open App</a> |
-        <a href="https://github.com/shoikotsen/weather-app" target="_blank">View on GitHub</a>
-      </li>
-
-      <li>
-        <strong>Expense Tracker App (HTML/CSS/JS)</strong> – A personal budgeting tool that tracks expenses, stores them in localStorage, and visualizes spending using Chart.js.
-        <a href="https://shoikotsen.github.io/expense-tracker/" target="_blank">Open App</a> |
-        <a href="https://github.com/shoikotsen/expense-tracker" target="_blank">View on GitHub</a>
-      </li>
-
-      <li>
-        <strong>Password Manager App (HTML/CSS/JS)</strong> – A secure web app to store encrypted passwords locally with show/hide and delete features using Bootstrap.
-        <a href="https://shoikotsen.github.io/password-manager/" target="_blank">Open App</a> |
-        <a href="https://github.com/shoikotsen/password-manager" target="_blank">View on GitHub</a>
-      </li>
-
-      <li>
-         <strong>Realistic Snake Game (HTML/CSS/JS)</strong> 🐍  
-         A modern remake of the classic Snake game with realistic textures, a dark theme, and smooth gameplay. Fully playable online.  
-         <a href="https://shoikotsen.github.io/snake-game/" target="_blank">Play Now</a> |
-         <a href="https://github.com/shoikotsen/snake-game" target="_blank">View on GitHub</a>
-      </li>
-
-      <li>
-         <strong>Walton Customer Sentiment Analysis (Python, NLP)</strong> – Analyzed customer reviews using BERT-based NLP and visualized insights with Python matplotlib and seaborn.
-         <a href="https://github.com/shoikotsen/walton-sentiment-analysis" target="_blank">View on GitHub</a>
-      </li>
-      <li>
-         <strong>Dino Game Bot (Python)</strong> 🦖 A Python bot that plays the Chrome Dino Game automatically by detecting obstacles like birds and cacti using screen capture and keyboard automation.
-        <a href="https://github.com/shoikotsen/dino-game-bot" target="_blank">View on GitHub</a>
-      </li>
-
-      <li>
-        <strong>Arduino Robot "BULLS"</strong> – Obstacle-avoiding robot built with Arduino Uno, IR sensors, and remote control. Team lead and hardware designer. 
-        <span>(University Project)</span>
-      </li>
-    </ul>
-  </section>
-  <section id="education">
-      <h2>Education</h2>
-  <ul>
-    <li>
-      <strong>University of South Florida</strong> – Tampa, Florida (USA)  
-      <br>Bachelor of Science, Computer Science  
-      <br>Expected May 2026  
-      <br><strong>CGPA:</strong> 2.98
-    </li>
-    <li>
-      <strong>Academia School</strong> – Gulshan, Dhaka (Bangladesh)
-      <br>A Levels  
-      <br><strong>CGPA:</strong> 4.0
-    </li>
-    <li>
-      <strong>South Point School And College</strong> – Banani, Dhaka (Bangladesh)
-      <br>O Levels
-      <br><strong>CGPA:</strong> 3.5
-    </li>
-  </ul>
-   </section>
-
-   <section id="coursework">
-  <h2>Relevant Coursework</h2>
-  <ul>
-    <li>Data Structures</li>
-    <li>Computer Organization</li>
-    <li>Program Design</li>
-    <li>Automata</li>
-    <li>Analysis of Algorithms</li>
-    <li>Programming Concepts</li>
-  </ul>
+<section id="experience">
+ <h2>Experience</h2>
+ <p class="sub">Software work first, then the jobs that taught me to work with people.</p>
+ <div class="tl">
+  <article class="job"><div class="when">Jun 2025 – Sep 2025</div><h3>Software Developer Intern</h3><div class="org">Walton Hi-Tech Industries Ltd., Dhaka</div><ul><li>Developed and tested software modules for embedded systems in C, C++ and Python.</li><li>Worked with senior developers to debug and optimize firmware.</li><li>Designed a web-based tool for monitoring device performance.</li></ul><div class="stack">C, C++, Python, Git, APIs, Agile</div></article>
+  <article class="job"><div class="when">May 2024 – Present</div><h3>Guest Services Attendant</h3><div class="org">Yuengling Center, Tampa</div><ul><li>Supported events with 5,000+ attendees, keeping guests safe and answering their questions.</li></ul></article>
+  <article class="job"><div class="when">May 2023 – Present</div><h3>Training Associate</h3><div class="org">Hegemon Group International (remote)</div><ul><li>Helped educate clients on financial literacy through sales outreach and virtual workshops.</li></ul></article>
+  <article class="job"><div class="when">Apr 2021 – Apr 2023</div><h3>Earlier roles</h3><div class="org">Dining, retail and teaching</div><ul><li>USF Juniper Dining associate, serving 100+ students a day.</li><li>Sales associate at B.C. Sen Jewellers, helping 10+ customers a day.</li><li>Teacher assistant at Edcam Education, working with 40+ students.</li></ul></article>
+ </div>
 </section>
 
+<section id="projects">
+ <h2>Projects</h2>
+ <p class="sub">Nine projects across firmware, data and the web.</p>
+ <div class="chips" role="group" aria-label="Filter projects">
+  <button class="chip" aria-pressed="true" data-f="all">All</button>
+  <button class="chip" aria-pressed="false" data-f="web">Web apps</button>
+  <button class="chip" aria-pressed="false" data-f="py">Python &amp; data</button>
+  <button class="chip" aria-pressed="false" data-f="emb">Embedded &amp; C++</button>
+ </div>
+ <div class="grid">
+  <article class="card" data-c="py"><h3>Walton Sentiment Analysis</h3><p>Analyzes customer reviews with a BERT-based NLP model and charts the results.</p><div class="stack">Python, NLP, matplotlib, seaborn</div><div class="lk"><a href="https://github.com/shoikotsen/walton-sentiment-analysis">GitHub</a></div></article>
+  <article class="card" data-c="emb"><h3>Arduino Robot "BULLS"</h3><p>An obstacle-avoiding robot with IR remote control. I led the team and designed the hardware.</p><div class="stack">Arduino Uno, IR sensors, C++</div></article>
+  <article class="card" data-c="web"><h3>Expense Tracker</h3><p>A budgeting tool that saves expenses in localStorage and charts spending.</p><div class="stack">HTML, CSS, JS, Chart.js</div><div class="lk"><a href="https://shoikotsen.github.io/expense-tracker/">Open app</a> | <a href="https://github.com/shoikotsen/expense-tracker">GitHub</a></div></article>
+  <article class="card" data-c="web"><h3>Weather App</h3><p>Shows live temperature, conditions and an icon for any city.</p><div class="stack">HTML, CSS, JS, OpenWeatherMap API</div><div class="lk"><a href="https://shoikotsen.github.io/weather-app/">Open app</a> | <a href="https://github.com/shoikotsen/weather-app">GitHub</a></div></article>
+  <article class="card" data-c="web"><h3>Password Manager</h3><p>Stores encrypted passwords locally, with show/hide and delete.</p><div class="stack">HTML, CSS, JS, Bootstrap</div><div class="lk"><a href="https://shoikotsen.github.io/password-manager/">Open app</a> | <a href="https://github.com/shoikotsen/password-manager">GitHub</a></div></article>
+  <article class="card" data-c="web"><h3>Realistic Snake Game</h3><p>A browser remake of Snake with textures, a dark theme and smooth play.</p><div class="stack">HTML, CSS, JS</div><div class="lk"><a href="https://shoikotsen.github.io/snake-game/">Play now</a> | <a href="https://github.com/shoikotsen/snake-game">GitHub</a></div></article>
+  <article class="card" data-c="py"><h3>Dino Game Bot</h3><p>Plays the Chrome Dino game by spotting cacti and birds on screen.</p><div class="stack">Python, screen capture, automation</div><div class="lk"><a href="https://github.com/shoikotsen/dino-game-bot">GitHub</a></div></article>
+  <article class="card" data-c="py"><h3>PDF Manager Tool</h3><p>A command-line tool that merges multiple PDF files.</p><div class="stack">Python</div><div class="lk"><a href="https://github.com/shoikotsen/pdf_manager">GitHub</a></div></article>
+  <article class="card" data-c="emb"><h3>Snake Game (C++)</h3><p>A terminal Snake game with dynamic tail logic and score tracking.</p><div class="stack">C++</div><div class="lk"><a href="https://github.com/shoikotsen/snake_game">GitHub</a></div></article>
+ </div>
+</section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p><strong>Languages:</strong> Python, C, C++, CSS, Java, html</p>
-    <p><strong>Tools & Platforms:</strong> Adobe Photoshop, Premiere Pro, Arduino, Office Suite, Pandas, Microsoft Excel, Microsoft Word</p>
-    <p><strong>Other:</strong> Problem Solving, Public Speaking, Team Collaboration, Salesmanship, Customer Relationship Building</p>
-  </section>
+<section id="about">
+ <h2>About</h2>
+ <p class="sh">Academics</p>
+ <h3 class="big">Education</h3>
+ <div class="edu"><h3>Bachelor of Science in Computer Science</h3><div class="stack">Expected May 2027</div><p class="org">University of South Florida</p><p>Data Structures, Analysis of Algorithms, Computer Architecture, Computer Organization, Discrete Structures, Automata and Formal Languages, Intro to AI, Probability and Statistics, Linear Systems, Software System Development, Operating Systems (in progress), Software Engineering (in progress).</p></div>
+ <div class="two" style="margin-top:20px">
+  <div class="box"><h3>A Levels</h3><p>Academia School, Dhaka. Cambridge exams through the British Council. CGPA 4.0.</p></div>
+  <div class="box"><h3>O Levels</h3><p>South Point School &amp; College, Dhaka. Cambridge exams through the British Council.</p></div>
+  <div class="box"><h3>Involvement</h3><p>Member and performer, Bangladesh Student Association (since 2021). Community service volunteer at USF.</p></div>
+ </div>
+</section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <ul>
-      <li>
-      <strong>Software Developer Intern</strong> – Walton Hi-Tech Industries Ltd., Dhaka, Bangladesh<br>
-      <em>Jun 2025 – Sep 2025</em><br>
-      ● Developed and tested software modules for embedded systems using C, C++, and Python.<br>
-      ● Collaborated with senior developers to debug and optimize firmware.<br>
-      ● Designed a web-based tool for device performance monitoring.<br>
-      ● Gained hands-on experience with Git, APIs, databases, and Agile workflows.
-    </li>
+<section id="certificates">
+ <h2>Certificates &amp; awards</h2>
+ <h3 class="sh">Courses</h3>
+ <dl class="rows">
+  <div class="r"><dt>Jul 23, 2025</dt><dd><b>Introduction to Career Skills in Data Analytics</b>LinkedIn Learning. 2 hr 21 min. Covers data analytics and tech career skills.</dd></div>
+  <div class="r"><dt>Jul 16, 2025</dt><dd><b>Learning Data Analytics: 1 Foundations</b>LinkedIn Learning. Data analytics fundamentals, with continuing professional education credit.</dd></div>
+  <div class="r"><dt>Jul 15, 2025</dt><dd><b>Data Structures in JavaScript: Trees and Graphs</b>LinkedIn Learning. 2 hr 1 min. Covers data structures, web development and front-end development.</dd></div>
+  <div class="r"><dt>Jun 30, 2025</dt><dd><b>Complete Guide to C++ Programming Foundations</b>LinkedIn Learning. 7 hr 1 min. Covers C++.</dd></div>
+  <div class="r"><dt>Jun 30, 2025</dt><dd><b>Building RESTful APIs with Node.js and Express</b>LinkedIn Learning. 1 hr 17 min. Covers Express.js, REST APIs and Node.js.</dd></div>
+  <div class="r"><dt>Jun 25, 2025</dt><dd><b>Machine Learning with Python: Foundations</b>LinkedIn Learning. 1 hr 54 min. Covers machine learning and Python.</dd></div>
+  <div class="r"><dt>Jun 25, 2025</dt><dd><b>Programming Foundations: Algorithms</b>LinkedIn Learning. 2 hr 45 min. Covers algorithm design, data structures and AI.</dd></div>
+  <div class="r"><dt>Jun 24, 2025</dt><dd><b>Software Development Life Cycle (SDLC)</b>LinkedIn Learning. 1 hr 34 min. Covers the software development life cycle.</dd></div>
+ </dl>
+ <h3 class="sh" style="margin-top:56px">Awards and participation</h3>
+ <dl class="rows">
+  <div class="r"><dt>Microsoft Learn</dt><dd><b>Beginner's Guide to Computer Vision and Microsoft Azure</b>Microsoft Learn Student Ambassadors event. Attended and completed.</dd></div>
+  <div class="r"><dt>BRAC &amp; a2i</dt><dd><b>COVID-19 Awareness and Prevention</b>Online course developed by BRAC and offered through MuktoPaath.</dd></div>
+  <div class="r"><dt>Dec 2020</dt><dd><b>Aid in Time II, Certificate of Appreciation</b>Recognized for outstanding performance as part of team Pink, 24–25 December 2020.</dd></div>
+  <div class="r"><dt>May 2017</dt><dd><b>Maths Olympiad, Certificate of Participation</b>South Point School &amp; College, Class 8.</dd></div>
+  <div class="r"><dt>Jun 2010</dt><dd><b>Certificate of Recognition, Drawing</b>Playpen, Standard I. Awarded for excellence in drawing.</dd></div>
+  <div class="r"><dt>Dec 2009</dt><dd><b>2nd place, Art Competition</b>Playpen, Standard I.</dd></div>
+ </dl>
+</section>
 
-    <li>
-      <strong>Guest Services Attendant</strong> – Yuengling Center, Tampa, FL<br>
-      <em>May 2024 – Present</em><br>
-      ● Provided exceptional customer service, ensuring a safe and enjoyable guest experience.
-    </li>
+<section id="skills">
+ <h2>Skills</h2>
+ <dl class="rows">
+  <div class="r"><dt>Languages</dt><dd>Python, Java, Kotlin, C#, JavaScript, TypeScript, SQL, C/C++, COBOL, Bash, CSS</dd></div>
+  <div class="r"><dt>Frameworks</dt><dd>React.js, Next.js, Node.js, Express.js, FastAPI, Jetpack Compose, Media3 (ExoPlayer), Tailwind CSS, Bootstrap, Chart.js, Pandas, NumPy, Scikit-learn</dd></div>
+  <div class="r"><dt>Data &amp; Cloud</dt><dd>PostgreSQL, pgvector, Firebase Firestore, Firebase Auth, Supabase, SQLite, MySQL, MongoDB, Docker, AWS</dd></div>
+  <div class="r"><dt>Tools</dt><dd>Git, GitHub Actions, Jira, ServiceNow, Tableau, Unity, OpenXR, Android SDK, Vercel, Arduino, Adobe Photoshop, Adobe Premiere Pro, Microsoft Office, Excel</dd></div>
+  <div class="r"><dt>Practices</dt><dd>REST APIs, MVVM, AI Workflow Orchestration, RAG, Vector Search, Concurrent Processing, CI/CD, Data Pipelines, Machine Learning, Agile/Scrum</dd></div>
+ </dl>
+</section>
 
-    <li>
-      <strong>Part-Time Sales Associate</strong> – B.C. Sen Jewellers, Dhaka, Bangladesh<br>
-      <em>Jan 2022 – Apr 2022</em><br>
-      ● Welcomed over 10 customers daily, guiding them through collections and recommending tailored options to enhance their shopping experience.
-    </li>
+<div class="contact" id="contact">
+ <h2>Let's build something.</h2>
+ <p>Open to summer internships, new-grad roles, and interesting problems in backend systems, data infrastructure, or applied AI. I reply fast.</p>
+ <div class="row"><a class="btn p" href="mailto:shoikot@usf.edu">Send email</a><a class="btn" href="https://www.linkedin.com/in/shoikotsen/">LinkedIn</a><a class="btn" href="https://github.com/shoikotsen">GitHub</a></div>
+</div>
+</main>
+<footer><div class="wrap">
+ <div class="ft">
+  <div><span class="mark">SS</span><div class="fname">Shoikot Sen</div><p class="fq">"The best way to predict the future is to invent it."</p><div class="fa">Alan Kay</div></div>
+  <div><h4>Site</h4><ul><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div>
+  <div><h4>Connect</h4><ul><li><a href="https://github.com/shoikotsen">github.com/shoikotsen</a></li><li><a href="https://www.linkedin.com/in/shoikotsen/">linkedin.com/in/shoikotsen</a></li><li><a href="mailto:shoikot@usf.edu">shoikot@usf.edu</a></li></ul></div>
+ </div>
+ <div class="fb"><span>Turning coffee into code, one commit at a time.</span><span>© 2026 Shoikot Sen</span></div>
+</div></footer>
 
-    <li>
-      <strong>Part-time Cooking and Service Staff</strong> – USF Juniper Dining, Tampa, FL<br>
-      <em>Aug 2022 – Apr 2023</em><br>
-      ● Expert in using dining electronics, ensuring efficient service delivery.
-    </li>
-
-    <li>
-      <strong>Teacher Assistant</strong> – Edcam Education, Dhaka, Bangladesh<br>
-      <em>Apr 2021 – Jul 2021</em><br>
-      ● Engaged positively with students, fostering an encouraging learning atmosphere.
-    </li>
-      <li>
-        <strong>Training Associate</strong> – Hegemon Group International (Remote)
-        <br />
-        ● Collaborated with team members to educate clients on financial literacy. Participated in sales outreach and virtual workshops.
-      </li>
-    </ul>
-  </section>
-
-  <section id="involvement">
-    <h2>Involvement</h2>
-    <ul>
-      <li>
-        <strong>Member & Performer</strong> – Bangladesh Student Association, USF
-      </li>
-      <li>
-        <strong>Volunteer</strong> – Community Service Projects (USF)
-      </li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: shoikot@usf.edu</p>
-    <p>Phone: +1 813-860-1733</p>
-    <p>GitHub: <a href="https://github.com/shoikotsen" target="_blank">shoikotsen</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/shoikotsen" target="_blank">linkedin.com/in/shoikotsen</a></p>
-    <p>Resume: <a href="Resume Shoikot.pdf" download>Download PDF</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 Shoikot Sen</p>
-  </footer>
+<script>
+document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){
+ document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+ var f=b.dataset.f;document.querySelectorAll('.card').forEach(function(c){c.hidden=f!=='all'&&c.dataset.c!==f});
+})});
+var dm=document.getElementById('dm'),dv=document.getElementById('dmv');
+function isDark(){var r=document.documentElement;return r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches)}
+function sync(){var d=isDark();dm.setAttribute('aria-checked',d);dv.textContent=d}
+dm.addEventListener('click',function(){document.documentElement.dataset.theme=isDark()?'light':'dark';sync()});
+sync();
+var ws=document.getElementById('ws'),pb=document.getElementById('pause'),sayEl=document.getElementById('say'),msg='hey there! glad you stopped by :)',i=0;
+function setP(p){ws.classList.toggle('paused',p);pb.innerHTML=p?'Play motion &#9654;':'Pause motion &#8545;'}
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){setP(true);sayEl.textContent=msg}else{(function t(){if(i<=msg.length){sayEl.textContent=msg.slice(0,i++);setTimeout(t,55)}})()}
+pb.addEventListener('click',function(){setP(!ws.classList.contains('paused'))});
+</script>
 </body>
 </html>
